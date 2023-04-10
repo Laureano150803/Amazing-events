@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background-color:rgb(0, 0, 0);   
+}
+nav a{
+    color: white !important;
+}
+nav a:hover{
+    background-color: rgb(119, 4, 4);
+    border-radius: 10px;
+}
+.navbar-toggler-icon{
+    background-color: white;
+}
+footer{
+    background-color: #b8b7b7;
+    height: 5vh;
+}
+main{
+    background-color: #19A7CE;
+    min-height: 100vh;
+}
+#logo{
+    width: 10rem;
+}
+.nav-link{
+    margin: 20px;
+}
+#box-seaching{
+    padding: 0;
+}
+header{
+    background-color: #146C94;
+    text-align: center;
+    height: 10vh;
+}
+.card{
+    margin: 20px;
+    background-color: #E3DFFD;
+}
+.form-check{
+    margin: 10px;
+}
+footer img{
+    width: 2rem;
+}
+.form-control{
+    width: 20rem ;
+}
+#main_contact{
+    height: 75vh;
+}
+.card-text_1{
+    width: 20rem;
+}
+.section{
+    margin: 20px;
+}
+table{
+    margin: 20px;
+}
+tr , td{
+    border: 2px solid black;
+}
+
+.main_details .card{
+    margin: 0;
+}
+.title_table{
+    font-size: larger;
+    font-style: italic;
+    background-color:#F6F1F1;
+}
+.card-link{
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #77eafc;
+    padding: 10px;
+    border-radius: 10px;
+    height:2rem;
+    font-family: cursive;
+}
+.card-link:hover{
+    background-color: #146C94;
+}
+.form-control{
+    resize: none;
+}
+#contenedorCartas img, #contenedor_past img, #contenedor_upcoming img{
+    height: 10rem;
+}
+.main_details img{
+    width: 20rem;
+}
+@media only screen and (min-width: 320px) and (max-width:767px){
+    
+    .card-text_1{
+        width: 15rem;
+    }
+    #checks{
+        flex-direction: column;
+    }
+    #main_contact form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   .form_contact textarea ,.form_contact input{
+    width: 15rem;
+   }
+}
+    
