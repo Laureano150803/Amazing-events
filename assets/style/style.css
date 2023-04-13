@@ -11,23 +11,33 @@ nav a{
 }
 nav a:hover{
     background-color: rgb(119, 4, 4);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .navbar-toggler-icon{
     background-color: white;
 }
 footer{
     background-color: #b8b7b7;
-    height: 5vh;
+    height: 8vh;
+    display: flex;
+    align-items: center;
 }
 main{
     background-color: #19A7CE;
+    min-height: 100vh;
 }
 #logo{
     width: 10rem;
 }
 .nav-link{
     margin: 20px;
+}
+#box-seaching{
+    padding: 0;
+}
+#checks input, label{
+   margin-right: 20px;
+    
 }
 header{
     background-color: #146C94;
@@ -62,12 +72,6 @@ table{
 tr , td{
     border: 2px solid black;
 }
-#main_stats{
-    height: 75vh;
-}
-#box-seaching{
-    padding: 0;
-}
 
 .main_details .card{
     margin: 0;
@@ -94,21 +98,48 @@ tr , td{
 .form-control{
     resize: none;
 }
-#contenedorCartas img, #contenedor_past img, #contenedor_upcoming img{
+ #contenedorCartas img, #contenedor_past img, #contenedor_upcoming img{
     height: 10rem;
+    width: 18rem;
+} 
+.main_details{
+    max-height: 80vh;
 }
-.main_details img{
+.main_details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carta_details{
+    width:18rem ;
+    box-shadow: 0px 0px 20px #000000;
+}
+.carta_details:hover{
+    margin: 10px;
+    transition: 1s;
+    box-shadow: 0px 0px 50px #000000;
     width: 20rem;
 }
+
+
+#contenedor_table tr, #contenedor_table_upcoming tr, #contenedor_table_past tr{
+    text-align: center;
+    background-color: #feeee3
+}
 @media only screen and (min-width: 320px) and (max-width:767px){
-    #search{
-        margin-top: 2rem;
+    .main_details{
+        min-height: 100vh;
     }
-    #main_stats, #main_contact{
-        height:100vh;
-    }
+     #contenedorCartas img, #contenedor_past img, #contenedor_upcoming img{
+        height: 10rem;
+        width: 15rem;
+    } 
+    
     .card-text_1{
         width: 15rem;
+    }
+    #checks{
+        flex-direction: column;
     }
     #main_contact form{
         display: flex;

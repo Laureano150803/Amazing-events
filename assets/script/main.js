@@ -1,22 +1,29 @@
-function crearCarta(carta){
-    return`<div class="card text-center" style="width: 18rem;">
-    <img src="${carta.image}" class="card-img-top" alt="books">
-    <div class="card-body">
-    <h5 class="card-title">${carta.name}</h5>
-    <p class="card-text"><b>Place: </b>${carta.place}</p>
-    </div>
-    <div class="card-body d-flex justify-content-between">
-    <p><b>Price: </b>${carta.price}</p>
-    <a href="./details.html" class="card-link">Details</a>
-    </div>
-    </div>`
-}
-const eventos=data.eventos
+const $search = document.getElementById('search')
+const $checkboxs = document.getElementById('checks')
+const $cartas = document.getElementById('contenedorCartas')
+let eventos;
+fetch('https://mindhub-xj03.onrender.com/api/amazing')
+.then(data => data.json())
+.then(res => {
+      eventos = res.events.filter(evento => evento.category)
+      crearCheckbox(eventos,$checkboxs )
+      imprimirCartas(eventos,$cartas)  
+      $search.addEventListener('keyup', filtrar)
+      $checkboxs.addEventListener('change', filtrar) 
+})
+.catch(error => console.log(error)) 
 
-const $contenedor = document.getElementById('contenedorCartas')
+ function filtrar (){
+  let checked = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(e =>e.value)
+  let filtradosPorCategoria = eventos.filter(evento=>checked.includes(evento.category)|| checked.length ===0)
+  let filtadosPorSearch = filtradosPorCategoria.filter(evento => evento.name.toLowerCase().includes($search.value.toLowerCase()))
+ imprimirCartas(filtadosPorSearch, $cartas)  
+   
+}  
+import{crearCheckbox, imprimirCartas } from './modules/funciones.js'
 
-let template=''
-for(const evento of eventos){
-    template += crearCarta(evento)
-}
-$contenedor.innerHTML = template
+
+ 
+
+
+
